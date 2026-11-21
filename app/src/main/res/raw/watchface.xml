@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFace width="450" height="450">
+  <Metadata key="CLOCK_TYPE" value="DIGITAL"/>
+  <Scene backgroundColor="#FF000000">
+    <Group name="interactive" x="0" y="0" width="450" height="450">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <PartImage x="0" y="0" width="450" height="450">
+        <Image resource="background"/>
+      </PartImage>
+        <PartText x="88" y="164" width="80" height="60">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="46" color="#E6E6E6"><Template>%02d<Parameter expression="[HOUR_0_23]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="98" y="145" width="60" height="28">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="19" color="#9A9A9A"><Template>%02d<Parameter expression="(([HOUR_0_23] + 23) % 24)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="98" y="217" width="60" height="28">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="19" color="#9A9A9A"><Template>%02d<Parameter expression="(([HOUR_0_23] + 1) % 24)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="285" y="164" width="80" height="60">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="46" color="#E6E6E6"><Template>%02d<Parameter expression="[MINUTE]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="294" y="145" width="60" height="28">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="19" color="#9A9A9A"><Template>%02d<Parameter expression="(([MINUTE] + 59) % 60)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="294" y="217" width="60" height="28">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="19" color="#9A9A9A"><Template>%02d<Parameter expression="(([MINUTE] + 1) % 60)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="201" y="175" width="50" height="34">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="25" color="#FF8A00"><Template>%02d<Parameter expression="[SECOND]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="201" y="155" width="50" height="22">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="17" color="#D0D0D0"><Template>%02d<Parameter expression="(([SECOND] + 59) % 60)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="201" y="207" width="50" height="22">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="17" color="#D0D0D0"><Template>%02d<Parameter expression="(([SECOND] + 1) % 60)"/></Template></Font></Text>
+        </PartText>
+        <PartText x="89" y="328" width="70" height="24">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="17" color="#FFFFFF"><Template>%d%%<Parameter expression="[BATTERY_PERCENT]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="175" y="331" width="100" height="24">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="19" color="#FFFFFF"><Template>%s %d<Parameter expression="[DAY_OF_WEEK_S]"/><Parameter expression="[DAY_OF_MONTH]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="181" y="349" width="90" height="14">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="NORMAL" size="10" color="#CCCCCC"><Template>%s<Parameter expression="[MONTH_F]"/></Template></Font></Text>
+        </PartText>
+      <ComplicationSlot slotId="0" name="STEPS" displayName="Passi" x="293" y="328" width="80" height="24" supportedTypes="SHORT_TEXT">
+        <DefaultProviderPolicy defaultSystemProvider="STEP_COUNT" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="80" height="24"/>
+        <Complication type="SHORT_TEXT">
+        <PartText x="0" y="0" width="80" height="24">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="17" color="#FFFFFF"><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Font></Text>
+        </PartText>
+        </Complication>
+      </ComplicationSlot>
+      <ComplicationSlot slotId="1" name="HEART" displayName="Battito" x="212" y="374" width="62" height="24" supportedTypes="SHORT_TEXT">
+        <DefaultProviderPolicy defaultSystemProvider="EMPTY" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="62" height="24"/>
+        <Complication type="SHORT_TEXT">
+        <PartText x="0" y="0" width="62" height="24">
+          <Text align="CENTER"><Font family="SANS_SERIF" weight="BOLD" size="17" color="#FFFFFF"><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Font></Text>
+        </PartText>
+        </Complication>
+      </ComplicationSlot>
+    </Group>
+    <Group name="ambient" x="0" y="0" width="450" height="450" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255"/>
+      <DigitalClock x="75" y="175" width="300" height="100">
+        <TimeText format="HH:mm" align="CENTER">
+          <Font family="SANS_SERIF" weight="BOLD" size="72" color="#B0B0B0"/>
+        </TimeText>
+      </DigitalClock>
+    </Group>
+  </Scene>
+</WatchFace>
